@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .bottom_sheet_container {
+    @apply fixed top-0 left-0 w-full h-full bg-white;
+    /* visibility: hidden; */
+  }
+
+  .bottom_sheet_container .show {
+    visibility: visible;
+    background-color: "white";
+  }
+
+  .bottom_sheet_content {
+    @apply absolute bottom-0 left-0 w-full max-w-[1200px] max-h-full bg-white text-white;
+  }
+
+  .bottom_sheet_header {
+    @apply flex justify-center bg-gray-500;
+  }
+
+  .bottom_sheet_header .drag_icon {
+    @apply cursor-grab select-none p-[15px];
+  }
+
+  .bottom_sheet .drag_icon span {
+    @apply h-[5px] w-[50px] block bg-red-700 rounded-[20px];
+  }
+
+  .bottom_sheet_body {
+    @apply w-full h-full overflow-y-auto;
+  }
+}
